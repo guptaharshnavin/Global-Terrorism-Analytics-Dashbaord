@@ -1,0 +1,247 @@
+<html>
+	<head>
+		<title>GTADash</title>
+		<link rel="icon" href = "https://img.icons8.com/ultraviolet/40/000000/assault-rifle.png"/>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+			<a class="navbar-brand text-warning" href="Home.html"><img src="https://img.icons8.com/ultraviolet/40/000000/assault-rifle.png" alt="Logo"> Global Terrorism Analytics Dashboard</a>
+
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link">Developed By Harsh Gupta</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.linkedin.com/in/harsh-gupta-b24a93185/">Developer Profile <i class="fa fa-linkedin-square"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/guptaharshnavin/Graduate-Admission-Chance-Forecaster">Project Repository <i class="fa fa-github"></i></a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<br>
+			<div class="card-columns">
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Number of Terrorist Attacks</b><br>
+						<h4>1,81,691</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% Of Attacks Successful</b><br>
+						<h4>88.95%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>% Of Suicide Attacks</b><br>
+						<h4>03.65%</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>Most Common Attack</b><br>
+						<h4>Bombing/Explosion</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Most Common Target</b><br>
+						<h4>Private Citizens & Property</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>Most Affected Country</b><br>
+						<h4>Iraq</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container text-white">
+			<div class = "embed-responsive embed-responsive-16by9">
+				<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='attack_map.html') }}"></iframe>
+			</div>
+		</div>
+		<div class="container text-white">
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='most_affected.html') }}"></iframe>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='region_trends.html') }}"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h3 class="font-weight-bolder text-center"><br>Distribution of Types of Attacks</h3>
+			<ul class="nav nav-pills nav-center">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="pill" href="#seven" role="tab">1970-1999</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="pill" href="#two" role="tab">2000-2017</a>
+				</li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="seven" role="tabpanel">
+					<div class="container">
+						<div class="row">
+							<div class = "embed-responsive embed-responsive-16by9">
+								<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='att_dist_1970.html') }}"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="two" role="tabpanel">
+					<div class="container">
+						<div class="row">
+							<div class = "embed-responsive embed-responsive-16by9">
+								<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='att_dist_2000.html') }}"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='terror_trends.html') }}"></iframe>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='weapon_dist.html') }}"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<br>
+			<div class="card-columns">
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>Most Common Attack</b><br>
+						<h4>Bombing/Explosion</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Least Common Attack</b><br>
+						<h4>Radiological (Nuclear)</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% Of Bombing Attacks Successful</b><br>
+						<h4>86.28%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>% Of Firearm Attacks Successful</b><br>
+						<h4>92.42%</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% Of Biological Attacks Successful</b><br>
+						<h4>57.14%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>% Of Chemical Attacks Successful</b><br>
+						<h4>75.7%</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='attack_tgt.html') }}"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<br>
+			<div class="card-columns">
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% of Attacks on Government Successful</b><br>
+						<h4>84.37%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Country With Most Attacks on Government</b><br>
+						<h4>Iraq</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% of Attacks on Citizens Successful</b><br>
+						<h4>93.44%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Country With Most Attacks on Citizens</b><br>
+						<h4>Iraq</h4>
+					</div>
+				</div>
+				<div class="card bg-warning text-white">
+					<div class="card-body text-center">
+						<b>% of Attacks on Media Successful</b><br>
+						<h4>89.15%</h4>
+					</div>
+				</div>
+				<div class="card bg-danger text-white">
+					<div class="card-body text-center">
+						<b>Country With Most Attacks on Media</b><br>
+						<h4>Colombia</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='india_n_trends.html') }}"></iframe>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='unsc_m_trends.html') }}"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='att_success_trends.html') }}"></iframe>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "embed-responsive embed-responsive-16by9">
+					<iframe class = "embed-responsive-item"  src = "{{ url_for('static', filename='attack_scd_trends.html') }}"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
